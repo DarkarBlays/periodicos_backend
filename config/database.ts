@@ -1,7 +1,7 @@
 import path from 'path';
 
 export default ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+  const client = env('DATABASE_CLIENT', 'postgres');
 
   const connections = {
     mysql: {
@@ -25,11 +25,11 @@ export default ({ env }) => {
     postgres: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
+        host: env('DATABASE_HOST', 'postgresql://periodicos_db_user:CrkAsKsaY21n3x6rXZYc22EYfNnhDgT1@dpg-cvi22llrie7s73ec9400-a.oregon-postgres.render.com/periodicos_db'),
         port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'strapi'),
-        user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        database: env('DATABASE_NAME', 'periodicos_db'),
+        user: env('DATABASE_USERNAME', 'periodicos_db_user'),
+        password: env('DATABASE_PASSWORD', 'CrkAsKsaY21n3x6rXZYc22EYfNnhDgT1'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
