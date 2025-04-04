@@ -13,15 +13,10 @@
   "attributes": {
     "titulo": {
       "type": "string",
-      "required": true
-    },
-    "uid": {
-      "type": "uid",
-      "targetField": "titulo",
-      "required": true
+      "required": false
     },
     "precio": {
-      "required": true,
+      "required": false,
       "type": "integer"
     },
     "fecha": {
@@ -31,7 +26,7 @@
     "archivo": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "files"
       ]

@@ -546,7 +546,7 @@ export interface ApiPeriodicoPeriodico extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    archivo: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
+    archivo: Schema.Attribute.Media<'files'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -557,10 +557,9 @@ export interface ApiPeriodicoPeriodico extends Struct.CollectionTypeSchema {
       'api::periodico.periodico'
     > &
       Schema.Attribute.Private;
-    precio: Schema.Attribute.Integer & Schema.Attribute.Required;
+    precio: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    titulo: Schema.Attribute.String & Schema.Attribute.Required;
-    uid: Schema.Attribute.UID<'titulo'> & Schema.Attribute.Required;
+    titulo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
